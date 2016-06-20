@@ -16,13 +16,15 @@ import javafx.stage.Stage;
  * @author iftekher
  */
 public class HRMSystem extends Application {
+    private static Stage mainStage;
+
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("NewEmployeeUI.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("LoginPanelUI.fxml"));
         
         Scene scene = new Scene(root);
-        
+        mainStage = stage;
         stage.setScene(scene);
         stage.show();
     }
@@ -32,6 +34,10 @@ public class HRMSystem extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public static Stage getMainStage() {
+        return mainStage;
     }
     
 }
